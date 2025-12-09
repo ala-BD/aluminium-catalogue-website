@@ -155,10 +155,102 @@ img{max-width:100%; display:block}
 .catalogue-empty{color:var(--muted); text-align:center; padding:24px}
 
 /* Pagination */
-.pagination{display:flex; justify-content:center; gap:8px; margin:-20px 0 16px}
-.page-btn{min-width:34px; padding:6px 10px; border-radius:999px; border:1px solid var(--outline); background:var(--bg-soft); color:var(--text); cursor:pointer; font-size:.9rem}
-.page-btn:hover{border-color:var(--primary); box-shadow:0 0 0 1px rgba(var(--brand-rgb),.4)}
-.page-btn.active{background:linear-gradient(180deg,var(--primary),var(--primary-600)); color:#02121b; border-color:transparent; box-shadow:0 8px 16px rgba(0,0,0,.3)}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+  padding: 8px 0;
+}
+
+.pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: white;
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pagination button:not(.page-btn) {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: var(--primary);
+  color: var(--primary-600);
+}
+
+.pagination button.active {
+  background: linear-gradient(180deg, var(--primary), var(--primary-600));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Style pour les flèches */
+.pagination .nav-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0;
+}
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.pagination button:not(:last-child) {
+  border-right: 1px solid #e2e8f0;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f1f5f9;
+}
+
+.pagination button.active {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 4px;
+}
+
+.pagination button:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.pagination button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Style pour les flèches */
+.pagination .prev-next {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.pagination .prev-next:disabled {
+  background-color: #f8fafc;
+}
 
 /* Image lightbox */
 .lightbox-backdrop{
