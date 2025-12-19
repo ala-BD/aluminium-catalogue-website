@@ -87,7 +87,7 @@ img{max-width:100%; display:block}
 .grid-card{position:relative; display:flex; flex-direction:column; border-radius:12px; border:1px solid var(--outline); overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(2,18,27,.15))}
 .grid-card .media{width:100%; height:140px}
 .grid-card img.media{width:100%; height:140px; object-fit:contain; display:block; background:#0b0f14}
-.grid-card .caption{padding:8px 10px; background:rgba(0,0,0,.15); border-top:1px solid var(--outline)}
+.grid-card .caption{padding:8px 10px; background:rgba(0,0,0,.15); border-top:1px solid var(--outline); flex:1}
 .grid-card .caption h4{margin:0 0 4px; font-size:1rem}
 .grid-card .caption p{margin:0; color:var(--muted); font-size:.9rem; line-height:1.3}
 
@@ -204,33 +204,6 @@ img{max-width:100%; display:block}
   cursor: not-allowed;
 }
 
-/* Style pour les flèches */
-.pagination .nav-arrow {
-  font-size: 1.1rem;
-  line-height: 1;
-  padding: 0;
-}
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.pagination button:not(:last-child) {
-  border-right: 1px solid #e2e8f0;
-}
-
-.pagination button:hover:not(:disabled) {
-  background-color: #f1f5f9;
-}
-
-.pagination button.active {
-  background-color: #3b82f6;
-  color: white;
-  border-radius: 4px;
-}
-
 .pagination button:disabled {
   color: #94a3b8;
   cursor: not-allowed;
@@ -278,13 +251,13 @@ img{max-width:100%; display:block}
 
 /* Footer */
 .site-footer{border-top:1px solid var(--outline); background:linear-gradient(180deg, var(--primary), var(--primary-600))}
-.footer-inner{display:grid; grid-template-columns:1.2fr 1fr auto; gap:20px; align-items:center; padding:22px 0; color:#ffffff}
-.footer-nav{display:flex; gap:14px; justify-content:center}
+.footer-inner{display:grid; grid-template-columns:1fr auto; grid-template-rows:auto auto; gap:16px 24px; align-items:start; padding:22px 0; color:#ffffff}
+.footer-nav{display:flex; gap:14px; row-gap:8px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
 .footer-nav a{color:#e6f6ff; text-decoration:none; padding:6px 8px; border-radius:8px}
 .footer-nav a:hover{color:#ffffff; background:rgba(255,255,255,.15)}
 .footer-inner a[href^="mailto:"], .footer-inner a[href^="tel:"]{color:#ffffff; text-decoration:none}
 .footer-inner a[href^="mailto:"]:hover, .footer-inner a[href^="tel:"]:hover{color:#002b36}
-.footer-copy{color:#ecfeff; justify-self:end; text-align:right; white-space:nowrap}
+.footer-copy{color:#ecfeff; grid-column:1 / -1; justify-self:center; text-align:center; white-space:normal; line-height:1.35; opacity:.95}
 .contact-item{display:flex; align-items:center; gap:10px; margin:6px 0}
 .contact-item svg{width:18px; height:18px; fill:currentColor}
 .footer-inner strong{display:block; letter-spacing:.02em; margin-bottom:6px}
